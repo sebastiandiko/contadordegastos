@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Organizador de Gastos con IA</title>
+<script src="/vendor/chart.umd.js"></script>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>💰 Organizador de gastos</h1>
+      <p class="subtitle">Escribí un gasto en lenguaje natural y la IA lo clasifica automáticamente</p>
+    </header>
+
+    <form id="form-gasto">
+      <input
+        type="text"
+        id="input-texto"
+        placeholder='Ej: "compré nafta por 15000" o "cena afuera 8000 pesos"'
+        autocomplete="off"
+        required
+      />
+      <button type="submit" id="btn-agregar">Agregar</button>
+    </form>
+    <p id="mensaje-error" class="error"></p>
+
+    <section class="resumen">
+      <div class="card">
+        <span class="card-label">Total gastado</span>
+        <span class="card-value" id="total-general">$0</span>
+      </div>
+      <div class="card">
+        <span class="card-label">Gastos cargados</span>
+        <span class="card-value" id="cantidad-gastos">0</span>
+      </div>
+    </section>
+
+    <section class="contenido">
+      <div class="grafico-wrap">
+        <canvas id="grafico"></canvas>
+        <p id="sin-datos" class="sin-datos">Todavía no cargaste gastos.</p>
+      </div>
+
+      <div class="lista-wrap">
+        <h2>Últimos gastos</h2>
+        <ul id="lista-gastos"></ul>
+      </div>
+    </section>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
